@@ -1,0 +1,46 @@
+---
+swagger: "2.0"
+info:
+  description: "test gh and ghe"
+  version: "1.0.0"
+  title: "ghtest"
+paths:
+  /apisft:
+    get:
+      tags:
+      - "APIs"
+      summary: "testGh"
+      description: ""
+      operationId: "testGh"
+      parameters: []
+      responses:
+        200:
+          description: "export settings for this API"
+          schema:
+            $ref: "#/definitions/TestDTO"
+        404:
+          description: "specified API not found"
+definitions:
+  TestDTO:
+    type: "object"
+    required:
+    - "branch"
+    - "notificationEmail"
+    - "owner"
+    - "repository"
+    - "token"
+    properties:
+      token:
+        type: "string"
+      owner:
+        type: "string"
+      repository:
+        type: "string"
+      branch:
+        type: "string"
+      path:
+        type: "string"
+      yamlPath:
+        type: "string"
+      notificationEmail:
+        type: "string"
